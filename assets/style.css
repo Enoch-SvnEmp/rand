@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*  start of nav.... bar container CSS */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* pushing individual items apart from each other*/
+    align-items: center;
+    padding: 0.5rem 4rem;
+    padding-right: 2rem;
+    background-color: #111111;
+    width: 100%;
+    border-bottom: 1px solid #222222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;  /* this keeps the navbar on top of other content when scrollong; */
+}
+
+/* sovereign emperor logo css */
+.nav-logo {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 8rem;
+}
+
+/* humburger menu css */
+/* .................................  */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;  /* to keep it above mobile menu overlay */
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease; /* smooth animation later */
+}
+/* .......................................... */
+
+
+/* nav links css */
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #b4b936;
+    text-decoration: none;
+    font-family: 1rem;
+    font-weight: 500;
+    transition:  color 0.3s ease;    /*this will create a smooth hover transition */
+}
+
+.nav-links a:hover, a:active {
+    color: #fff;
+    /* scale: 2; */
+}
+
+/* the action buttons for extra features */
+.nav-actions {
+    align-items: center;
+    gap: 1rem;
+    display: flex;
+}
+
+.btn-log {
+    color: #37384e;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #72f68f;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.6rem 1rem;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-sub {
+    background-color: #2bfc59;
+    color: #111111;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.6rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-sub:hover {
+    background-color: #c6a801;
+    transform: translateY(-2px)
+}
+.btn-log:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px)
+}
+/* end of navigation bar css */
+/* ............................................................. */
+
+/* starting of main section css */
+/* ...........................................  */
+/* main request css */
+.main-req {
+    /* align-items: center; */
+    /* justify-content: center; */
+    text-align: center;
+}
