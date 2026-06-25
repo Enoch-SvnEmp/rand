@@ -140,7 +140,7 @@ body {
 /* ...........................................  */
 /* main request css */
 .main-req {
-    background-color: #5351bc;
+    background-color: #2a2963;
     max-width: 600px;
     margin: 0 auto;
     margin-top: 1rem;
@@ -180,7 +180,7 @@ label {
 }
 
 #submit-btn{
-    background-color: #8345f0;
+    background-color: #0260c5;
     color: #eadfdf;
     padding: 0.6rem 1.2rem;
     margin-top: 0.9rem;
@@ -194,7 +194,7 @@ label {
 
 #submit-btn:hover {
     color: #ffffff;
-    background-color: #3f0091;
+    background-color: #7022d6;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     transform: translateY(-2px);
     
