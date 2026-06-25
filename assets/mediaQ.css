@@ -20,15 +20,15 @@
         flex-direction: column;
         position: absolute;
         /* positions i right underneath thr nav bar row */
-        top: 60px; 
+        top: 60px;
         /* hides it off-screen by default */
-        left: -100%; 
-        
+        left: -100%;
+
         /* fill the rest of the phone screen */
         width: 100%;
-        height: calc(100vh - 60px);  
+        height: calc(100vh - 60px);
 
-        background-color: #111111;
+        background-color: #19182b;
         gap: 0;
         /* smooth sliding entry animation */
         transition: left 0.4s ease;
@@ -46,25 +46,28 @@
     }
 
     .nav-links a {
-        font-size: 1.2rem; /* make links bigger as they are easy to tap */
+        font-size: 1.2rem;
+        /* make links bigger as they are easy to tap */
         display: block;
     }
 
     /* hide the action buttons on mobile or drop them inside the mobile menu drawer */
     .nav-actions {
         display: flex;
-        flex-direction: column; /* keeps it clean. alternatively, you can include them inside the menu list */
+        flex-direction: column;
+        /* keeps it clean. alternatively, you can include them inside the menu list */
         position: absolute;
         /* positions i right underneath thr nav bar row */
-        top: 320px; 
+        top: 320px;
         left: -100%;
         width: 100%;
-        background-color: #111111;
+        background-color: #19182b;
         gap: 1rem;
         /* smooth sliding entry animation */
         transition: left 0.4s ease;
         text-align: center;
     }
+
     /* alternatively including them inside the menu list */
     .nav-actions.active {
 
@@ -75,7 +78,8 @@
 
     /* this active class will be triggered via javascript when clicked */
     .nav-links.active {
-        left: 0; /* slides the menu into view */
+        left: 0;
+        /* slides the menu into view */
     }
 
     /* .............................................  */
@@ -83,14 +87,22 @@
     .menu-toggle.is-active .bar {
         background-color: #fca3a3;
     }
+
     /* animates humbuger into an X when open  */
     .menu-toggle.is-active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .menu-toggle.is-active .bar:nth-child(2) {
         opacity: 0;
     }
+
     .menu-toggle.is-active .bar:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
+
+
+
+
+
 }

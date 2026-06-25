@@ -5,6 +5,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #364268;
+}
+
 /*  start of nav.... bar container CSS */
 .navbar {
     display: flex;
@@ -12,7 +17,7 @@
     align-items: center;
     padding: 0.5rem 4rem;
     padding-right: 2rem;
-    background-color: #111111;
+    background-color: #162132;
     width: 100%;
     border-bottom: 1px solid #222222;
     position: sticky;
@@ -20,7 +25,17 @@
     z-index: 1000;  /* this keeps the navbar on top of other content when scrollong; */
 }
 
+.navbar:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+
 /* sovereign emperor logo css */
+.logo-div {
+    width: 4rem;
+    height: 4rem;
+    overflow: hidden;
+}
+
 .nav-logo {
     width: 4rem;
     height: 4rem;
@@ -44,9 +59,13 @@
 .menu-toggle .bar {
     height: 3px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #e3e3e3;
     border-radius: 2px;
     transition: all 0.3s ease; /* smooth animation later */
+}
+.menu-toggle:hover {
+    /* background-color: #ffffff; */
+    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.3);
 }
 /* .......................................... */
 
@@ -59,15 +78,17 @@
 }
 
 .nav-links a {
-    color: #b4b936;
+    color: #36b9b7;
     text-decoration: none;
     font-family: 1rem;
     font-weight: 500;
+    font-size: 1.2rem;
     transition:  color 0.3s ease;    /*this will create a smooth hover transition */
 }
 
 .nav-links a:hover, a:active {
     color: #fff;
+    text-decoration: underline;
     /* scale: 2; */
 }
 
@@ -79,11 +100,11 @@
 }
 
 .btn-log {
-    color: #37384e;
+    color: #dcdcdc;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    background-color: #72f68f;
+    background-color: #8472f6;
     border: none;
     border-radius: 0.6rem;
     padding: 0.6rem 1rem;
@@ -91,8 +112,8 @@
 }
 
 .btn-sub {
-    background-color: #2bfc59;
-    color: #111111;
+    background-color: #782bfc;
+    color: #dcdcdc;
     padding: 0.6rem 1.2rem;
     border-radius: 0.6rem;
     border: none;
@@ -102,12 +123,15 @@
 }
 
 .btn-sub:hover {
-    background-color: #c6a801;
-    transform: translateY(-2px)
+    color: #ffffff;
+    background-color: #01c6bc;
+    transform: translateY(-2px);
 }
 .btn-log:hover {
-    background-color: #e6c200;
-    transform: translateY(-2px)
+    color: #ffffff;
+    background-color: #01c6bc;
+    transform: translateY(-2px);
+    
 }
 /* end of navigation bar css */
 /* ............................................................. */
@@ -116,7 +140,62 @@
 /* ...........................................  */
 /* main request css */
 .main-req {
-    /* align-items: center; */
-    /* justify-content: center; */
+    background-color: #5351bc;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.main-req:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.9);
+}
+
+h1 {
     text-align: center;
+    margin-bottom: 1rem;
+    color: #dff4fe;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin: 0.2rem 0;
+    margin-left: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #dff4fe;
+}
+/* ..............................................  */
+/* styling the input element  */
+/* ...............................................  */
+.main-req input {
+    width: 95%;
+    padding: 0.4rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    outline: none;
+}
+
+#submit-btn{
+    background-color: #8345f0;
+    color: #eadfdf;
+    padding: 0.6rem 1.2rem;
+    margin-top: 0.9rem;
+    /* margin-left: 26rem; */
+    border-radius: 0.6rem;
+    border: 0.1rem solid rgba(33, 33, 31, 0.2);
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#submit-btn:hover {
+    color: #ffffff;
+    background-color: #3f0091;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+    
 }
