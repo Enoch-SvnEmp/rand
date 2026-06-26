@@ -28,7 +28,7 @@
         width: 100%;
         height: calc(100vh - 60px);
 
-        background-color: #19182b;
+        background-color: rgba(25, 24, 43, 0.99);
         gap: 0;
         /* smooth sliding entry animation */
         transition: left 0.4s ease;
@@ -61,7 +61,8 @@
         top: 320px;
         left: -100%;
         width: 100%;
-        background-color: #19182b;
+        height: calc(100vh - 60px);
+        background-color: rgba(25, 24, 43, 0.99);
         gap: 1rem;
         /* smooth sliding entry animation */
         transition: left 0.4s ease;
@@ -121,5 +122,10 @@
         font-size: 1rem;
     }
 
-
+    /* output section css */
+    #clear-btn {
+        width: 90%;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
 }

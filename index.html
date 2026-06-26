@@ -45,24 +45,31 @@
         <div class="main-req input-group">
             <!-- section for taking the user's information -->
             <form action="">
-                <h1>Accepting User's Input</h1>
+                <h1>Accepting User's DATA</h1>
 
                 <label for="firstName">What is your First Name?</label>
-                <input type="text" name="firstName" id="firstName" placeholder="First Name">
+                <input type="text" name="firstName" id="firstName" class="firstName" placeholder="  First Name">
 
 
                 <label for="lastName">What is your last Name?</label>
-                <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+                <input type="text" name="lastName" id="lastName" class="lastName" placeholder="  Last Name">
 
-                <label for="dateob">what is your date of birth?</label>
-                <input type="date" name="dateob" id="dateOb">
+                <label for="dateob">Select your Date of Birth:</label>
+                <input type="date" name="dateob" id="dateOb" class="dateOb">
                 <button id="submit-btn">Submit</button>
-            </form>
+            </form> 
         </div>
 
 
         <!-- section for displaying user's information  -->
-        <div class="main-post">
+        <div class="main-post" id="main-post">
+            <h1>Displaying User's DATA</h1>
+            <div class="output-group">
+                <!-- using the my post-variableName as an ID to display the collected name from 'main-req' with javascript -->
+                <div id="post-intro"></div>
+                <div id="post-age"> </div>
+            </div>
+            <button id="clear-btn">Clear X </button>
         </div>
 
     </main>
