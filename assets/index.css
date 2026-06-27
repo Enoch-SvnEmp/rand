@@ -32,6 +32,6 @@ body {
 
 .btn-log.error {
     animation: shake 0.3s ease-in-out;
-    border: 2px solid red;
-    box-shadow: 0px 0px 10px red;
+    border: 2px solid rgba(245, 181, 181, 0.8);
+    box-shadow: 0px 0px 10px  rgba(245, 181, 181, 0.8);
 }

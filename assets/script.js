@@ -14,6 +14,10 @@ export function triggerAttention(element) {
     element.classList.remove('error');
     void element.offsetWidth; // force a reflow to restart the animation
     element.classList.add('error');
+    // remove the error class after the animation is done to allow for future triggers
+    setTimeout(() => {
+        element.classList.remove('error');
+    }, 300);
 }
 
 
