@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAND WEB</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/mediaQ.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-div">
+                <img class="nav-logo" src="assets/llogo.png" alt="SOVEREIGN EMPEROR LOGO">
+            </div>
+            <button class="menu-toggle" id="mobile-menu" aria-label="toggle navigation">
+                <span class="bar menu-toggle"></span>
+                <span class="bar menu-toggle"></span>
+                <span class="bar menu-toggle"></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">ABOUT user</a>
+                    </li>
+                    <li>
+                        <a href="contacts.html">contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions" id="nav-actions">
+                <button class="btn-sub">Suscribe</button>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <!-- main page for taking and displaying user's information -->
+        <div class="main-req input-group" id="input-group">
+            <!-- section for taking the user's information -->
+            <form action="">
+                <h1>Accepting User's DATA</h1>
+
+                <label for="firstName">What is your First Name?</label>
+                <input type="text" name="firstName" id="firstName" class="firstName" placeholder="  First Name">
+
+
+                <label for="lastName">What is your last Name?</label>
+                <input type="text" name="lastName" id="lastName" class="lastName" placeholder="  Last Name">
+
+                <label for="dateob">Select your Date of Birth:</label>
+                <input type="date" name="dateob" id="dateOb" class="dateOb">
+                <button id="submit-btn">Submit</button>
+            </form> 
+        </div>
+
+
+        <!-- section for displaying user's information  -->
+        <div class="main-post" id="main-post">
+            <h1>Displaying User's DATA</h1>
+            <div class="output-group">
+                <!-- using the my post-variableName as an ID to display the collected name from 'main-req' with javascript -->
+                <div id="post-intro"></div>
+                <div id="post-age"> </div>
+            </div>
+            <button id="clear-btn">Clear X </button>
+        </div>
+
+    </main>
+    <footer>
+        <div id="contacts" class="contact-sec">
+        </div>
+    </footer>
+    <script src="assets/script.js"></script>
+    <!-- <script src="assets/aboutUser.js"></script> -->
+    <script src="assets/index.js"></script>
+</body>
+
+</html>

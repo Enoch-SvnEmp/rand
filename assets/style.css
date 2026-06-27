@@ -148,6 +148,11 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+/* additional styling for the main request section to disappear when submitted */
+.input-group.disappear {
+    display: none;
+}
+
 .main-req:hover {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.9);
 }

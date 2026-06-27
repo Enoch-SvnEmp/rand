@@ -83,6 +83,17 @@ function voidRead(element) {
         void element.offsetWidth;
 }
 
+// adding a function to let make main-req disappear when the user clicks on the submit button
+const mainReq = document.getElementById('input-group');
+function disappear() {
+    mainReq.classList.add('disappear');
+}
+
+// adding a function to let make main-req reappear when the user clicks on the clear button
+function reappear() {
+    mainReq.classList.remove('disappear');
+}
+
 // creating a general function to make sure the user entered the required field 
 function data_valid(){
     // make sure the user actually entered data
@@ -137,6 +148,7 @@ function data_valid(){
         // if the all data required is entered then 'main-post' will be displayed
         removeErrorClassFromAll();
         display();
+        disappear();
     };
 };
 
@@ -183,6 +195,7 @@ enterData(lastName);
 enterData(dateOb);
 // .................................................................................
 
+
 // ....................................................................................
 // adding event listener to the submit button to perform specified functions
 // .................................................................................
@@ -190,12 +203,14 @@ submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     // .......................
     
+    
     // ........................
     data_valid();
     // .......................
     greeting();
     // .......................
     ageCalculator();
+
      
 });
 
@@ -206,4 +221,5 @@ submitBtn.addEventListener('click', (e) => {
 clearBtn.addEventListener('click', (e) => {
     e.preventDefault();
     clear();
+    reappear();
 });
