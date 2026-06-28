@@ -142,6 +142,7 @@ body {
 .main-req {
     background-color: rgba(36, 33, 113, 0.3);
     max-width: 600px;
+    width: 90%;
     margin: 0 auto;
     margin-top: 1rem;
     padding: 25px;
@@ -238,13 +239,15 @@ input::placeholder {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.firstName.error, .lastName.error, .dateOb.error {
+.firstName.error, .lastName.error, .dateOb.error,
+.email.error {
     border: 2px solid rgba(255, 51, 51, 0.8);
     background-color: #fff5f5;
     /* adding shaking animation */
     animation: shake 0.3s ease-in-out;
 }
-.firstName.error::placeholder, .lastName.error::placeholder, .dateOb.error::placeholder {
+.firstName.error::placeholder, .lastName.error::placeholder, 
+.dateOb.error::placeholder, .email.error::placeholder {
     color: #ff0000;
     font-weight: 600;
     transform: scale(1.05);

@@ -105,12 +105,8 @@
 
     /* ..........................................................  */
     /* input section css */
-    .main-req {
-        /* width: 100%; */
-        /* padding: 0.5rem; */
-        /* display: flex;
-        align-items: center;
-        justify-content: space-around; */
+    .main-req label {
+        font-size: 1rem;
     }
 
 

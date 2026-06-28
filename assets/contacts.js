@@ -1,3 +1,12 @@
+// javascript code for contacts html...........
+
+
+// import already existing functions from script.js file
+// import { isUserLoggedIn, triggerAttention } from './script.js';
+
+
+
+
 // javascript code for media query changes applicable............
 // select the Elements
 const menuButton = document.getElementById('mobile-menu');

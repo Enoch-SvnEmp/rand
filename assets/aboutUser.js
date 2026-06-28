@@ -1,5 +1,11 @@
 // javascript code for about user html...........
 
+// import already existing functions from script.js file
+import { display, voidRead, enterData, disappear, ageCalculator,
+    addErrorClass, removeErrorClass, introName } from './script.js';
+
+
+
 // javascript code for media query changes applicable............
 // select the Elements
 const menuButton = document.getElementById('mobile-menu');
@@ -29,6 +35,7 @@ const submitBtn = document.getElementById('submit-btn'); //id of the submit butt
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const dateOb = document.getElementById('dateOb');
+const Email = document.getElementById('email')
 
 // ID 's that are responsible for display n javascript
 const postFullName = document.getElementById('post-intro');
@@ -39,9 +46,7 @@ const postAge = document.getElementById('post-age');
 // ....................................................................................... 
 // creating a function to toggle between displaying 'main-post' when the 'submit' is 'clicked'
 const mainPost = document.getElementById('main-post')
-function display() {
-    mainPost.classList.toggle('display')
-};
+
 
 // a function to remove main-post and all data when the user clicks on the clear button
 const clearBtn = document.getElementById('clear-btn');
@@ -50,46 +55,25 @@ function clear() {
     firstName.value = '';
     lastName.value = '';
     dateOb.value = '';
+    Email.value = '';
     postFullName.innerHTML = '';
     postAge.innerHTML = '';
-    removeErrorClassFromAll();
+    removeErrorClass(firstName, lastName, dateOb, Email);
 }
 
-// creating a function to add and remove error class from the input fields
-function addErrorClass(element) {
-    element.classList.add('error');
-}
+// // creating a function to add and remove error class from the input fields
 
-function removeErrorClass(element) {
-    element.classList.remove('error');
-}
 
-function removeErrorClassFromAll() {
-    removeErrorClass(firstName);
-    removeErrorClass(lastName);
-    removeErrorClass(dateOb);
-}
 
 // function to remove the error class from all input fields when the user enters data in any of the input fields
-function enterData(element) {
-    // if the elements does not exist, exit the function immediately
-    if (!element) return;
 
-    element.addEventListener('input', () => {
-        removeErrorClass(element);
-    });
-}
 
 // a function to void read to force a browser reflow (restart the animation) when the user enters data in any of the input fields
-function voidRead(element) {
-        void element.offsetWidth;
-}
+
 
 // adding a function to let make main-req disappear when the user clicks on the submit button
 const mainReq = document.getElementById('input-group');
-function disappear() {
-    mainReq.classList.add('disappear');
-}
+
 
 // adding a function to let make main-req reappear when the user clicks on the clear button
 function reappear() {
@@ -99,47 +83,63 @@ function reappear() {
 // creating a general function to make sure the user entered the required field 
 function data_valid(){
     // make sure the user actually entered data
-    removeErrorClassFromAll();
-    voidRead(firstName);
-    voidRead(lastName);
-    voidRead(dateOb);
-    if (!firstName.value || !lastName.value || !dateOb.value) {
+    removeErrorClass(firstName, lastName, dateOb, Email);
+    voidRead(firstName, lastName, dateOb, Email);
+    if (!firstName.value || !lastName.value || !dateOb.value || !Email.value) {
         
+        
+        if (!firstName.value && !lastName.value && !dateOb.value && !Email.value) {
 
-        if (!firstName.value && !lastName.value && !dateOb.value) {
+            addErrorClass(firstName, lastName, dateOb, Email);
 
-            addErrorClass(firstName);
-            addErrorClass(lastName);
-            addErrorClass(dateOb);
+        } else if (!lastName.value && !firstName.value && !Email.value) {
+            removeErrorClass(dateOb);
+            addErrorClass(firstName, lastName, Email);
+
+
+        } else if (!dateOb.value  && !firstName.value && !Email.value) {
+            removeErrorClass(lastName);
+            addErrorClass(dateOb, firstName, Email);
+
+        } else if (!dateOb.value  && !lastName.value && !Email.value) {
+            removeErrorClass(firstName);
+            addErrorClass(dateOb, lastName, Email);
+
+        } else if (!dateOb.value && !Email.value) {
+            removeErrorClass(firstName, lastName);
+            addErrorClass(dateOb, Email);
+
+        } else if (!firstName.value && !Email.value) {
+            removeErrorClass(lastName, dateOb);
+            addErrorClass(firstName, Email);
 
         } else if (!lastName.value && !firstName.value) {
-            removeErrorClass(dateOb);
-            addErrorClass(firstName);
-            addErrorClass(lastName);
+            removeErrorClass(dateOb, Email);
+            addErrorClass(firstName, lastName);
 
         } else if (!dateOb.value  && !firstName.value) {
             removeErrorClass(lastName);
-            addErrorClass(dateOb);
-            addErrorClass(firstName);
+            removeErrorClass(Email);
+            addErrorClass(dateOb, firstName);
 
         } else if (!dateOb.value  && !lastName.value) {
-            removeErrorClass(firstName);
-            addErrorClass(dateOb);
-            addErrorClass(lastName);
+            removeErrorClass(firstName, Email);
+            addErrorClass(dateOb, lastName);
 
         } else if (!dateOb.value) {
-            removeErrorClass(firstName);
-            removeErrorClass(lastName);
+            removeErrorClass(firstName, lastName, Email);
             addErrorClass(dateOb);
 
         } else if (!firstName.value) {
-            removeErrorClass(lastName);
-            removeErrorClass(dateOb);
+            removeErrorClass(lastName, dateOb, Email);
             addErrorClass(firstName);
 
-        } else {
-            removeErrorClass(firstName);
-            removeErrorClass(dateOb);
+        } else if (!Email.value) {
+            removeErrorClass(lastName, firstName, dateOb);
+            addErrorClass(Email);
+
+        }  else {
+            removeErrorClass(firstName, lastName, dateOb, Email);
             addErrorClass(lastName);
 
         };
@@ -148,57 +148,29 @@ function data_valid(){
         // alert('please enter the empty field');
     } else {
         // if the all data required is entered then 'main-post' will be displayed
-        removeErrorClassFromAll();
-        display();
-        disappear();
+        removeErrorClass(firstName, lastName, dateOb, Email);
+        display(mainPost);
+        disappear(mainReq);
     };
 };
-// ........................................................................................................
-function greeting() {
 
-    const fName = firstName.value;
-    const lName = lastName.value;
-
-    postFullName.innerHTML = `Hello World, My Name is ${fName} ${lName}`;
-};
-
-// ........................................................................................................
-function ageCalculator() {
-    // javascript code for calculating date of birth(AGE) 
+// .......................................................................................................
 
 
-    const today = new Date();
-    const birthDate = new Date(dateOb.value);
-    
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const m = today.getMonth() - birthDate.getMonth();
-    const d = today.getDate() - birthDate.getDate();
-    // ........................................................
-    // displaying calculated age result
 
-    // if current month is before birth month or it's the birth month but the day has not arrive yet
-    if (m < 0 || (m === 0 && d < 0)) {
-        age--;
-    };
-    // edge case don't allow future dates
-    if (age < 0) {
-        alert('inverted timeline? pick a past date')
-    } else {
-        postAge.innerHTML = `I am ${age} years old`;
-    }
-    
-};
-
+// ....................................................................................
+// creating a function to introduce users with their input data when they click on the submit button
+function greetingIntro() {
+    introName(firstName.value, lastName.value, postFullName);
+    ageCalculator(dateOb, postAge);
+}
 
 // ....................................................................................
 // adding functions to the input fields to remove the error class when the user enters data in any of the input fields
 // ....................................................................................
 
-enterData(firstName);
-enterData(lastName);
-enterData(dateOb);
-// .................................................................................
-
+enterData(firstName, lastName, dateOb, Email);
+// .....................................................................
 
 // ....................................................................................
 // adding event listener to the submit button to perform specified functions
@@ -206,16 +178,10 @@ enterData(dateOb);
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     // .......................
-    
-    
-    // ........................
     data_valid();
     // .......................
-    greeting();
-    // .......................
-    ageCalculator();
-
-     
+    greetingIntro();
+    // ........................
 });
 
 

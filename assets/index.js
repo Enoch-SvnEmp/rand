@@ -1,4 +1,6 @@
 // JavaScript for index.html
+
+// import already existing functions from script.js file
 import { isUserLoggedIn, triggerAttention } from './script.js';
 
 // javascript code for media query changes applicable............
