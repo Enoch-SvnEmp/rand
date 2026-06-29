@@ -1,0 +1,28 @@
+
+/* lets design a 3d carousel for the user data that will be displayed */
+
+.carousel-div {
+    width: 100%;
+    display: flex;
+    margin: 2rem auto;
+    justify-content: center;
+}
+
+
+
+.card {
+    background-color: rgb(37, 105, 164);
+    width: 20%;
+    height: 20vh;
+    border: 0.2rem solid rgba(32, 231, 61, 0.5);
+    box-shadow: 0px 0px 10px rgba(255, 153, 122, 0.5);
+    margin: 0.5rem;
+}
+
+.card.one {}
+
+.card.two {}
+
+.card.three {}
+
+.card.four {}

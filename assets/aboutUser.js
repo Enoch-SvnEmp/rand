@@ -2,7 +2,7 @@
 
 // import already existing functions from script.js file
 import { display, voidRead, enterData, disappear, ageCalculator,
-    addErrorClass, removeErrorClass, introName } from './script.js';
+    addErrorClass, removeErrorClass, introName, triggerAttention } from './script.js';
 
 
 
@@ -79,7 +79,9 @@ const mainReq = document.getElementById('input-group');
 function reappear() {
     mainReq.classList.remove('disappear');
 }
-
+// ..............................................
+// state tracker: set the initial state to false
+let isFormSubmitted = false;
 // creating a general function to make sure the user entered the required field 
 function data_valid(){
     // make sure the user actually entered data
@@ -144,18 +146,33 @@ function data_valid(){
 
         };
         
-        
         // alert('please enter the empty field');
     } else {
         // if the all data required is entered then 'main-post' will be displayed
         removeErrorClass(firstName, lastName, dateOb, Email);
         display(mainPost);
         disappear(mainReq);
+        
     };
 };
 
 // .......................................................................................................
+// check if the user has submited before allowing suscribe button to function
 
+    // grab the suscribe button and the submit btn
+const subscribeBtn = document.getElementById('sub-btn')
+
+subscribeBtn.addEventListener('click', (e) => {
+    // check if the user has clicked the submit button
+    // validate your inputs here
+    if (data_valid()) {
+        isFormSubmitted = true 
+        window.location.href = 'contacts.html';       
+    } else {
+        isFormSubmitted = false
+        triggerAttention(submitBtn);
+    }
+});
 
 
 // ....................................................................................
@@ -168,7 +185,6 @@ function greetingIntro() {
 // ....................................................................................
 // adding functions to the input fields to remove the error class when the user enters data in any of the input fields
 // ....................................................................................
-
 enterData(firstName, lastName, dateOb, Email);
 // .....................................................................
 
@@ -182,9 +198,8 @@ submitBtn.addEventListener('click', (e) => {
     // .......................
     greetingIntro();
     // ........................
+
 });
-
-
 // ....................................................................................
 // adding event listener to the clear button to perform specified functions
 // .................................................................................
@@ -195,7 +210,3 @@ clearBtn.addEventListener('click', (e) => {
     reappear();
 });
 
-// when the user clicks the "Suscribe" button, redirect to the contacts.html page
-document.querySelector('.btn-sub').addEventListener('click', function() {
-    window.location.href = 'contacts.html';
-});
