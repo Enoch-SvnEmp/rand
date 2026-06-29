@@ -82,6 +82,13 @@ export function disappear(...elements) {
         element.classList.add('disappear');
     });
 }
+// adding an export function to let make element reappear when the user clicks on the submit button
+export function reappear(...elements) {
+    elements.forEach(element => {
+        if (!element) return;
+        element.classList.remove('disappear');
+    });
+}
 
 // creating an export function to add and remove error class from the input fields
 export function addErrorClass(...elements) {

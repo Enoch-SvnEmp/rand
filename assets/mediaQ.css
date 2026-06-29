@@ -112,14 +112,7 @@
 
 
 
-    #submit-btn {
-        width: 90%;
-        padding: 0.5rem;
-        font-size: 1rem;
-    }
-
-    /* output section css */
-    #clear-btn {
+    .btn {
         width: 90%;
         padding: 0.5rem;
         font-size: 1rem;

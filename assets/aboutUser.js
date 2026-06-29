@@ -1,7 +1,7 @@
 // javascript code for about user html...........
 
 // import already existing functions from script.js file
-import { display, voidRead, enterData, disappear, ageCalculator,
+import { display, voidRead, enterData, disappear, reappear, ageCalculator,
     addErrorClass, removeErrorClass, introName, triggerAttention } from './script.js';
 
 
@@ -24,7 +24,6 @@ menuButton.addEventListener('click', () => {
     navActions.classList.toggle('active');
 });
 // ....................................................................................
-
 
 
 // javascript for main request form
@@ -76,12 +75,11 @@ const mainReq = document.getElementById('input-group');
 
 
 // adding a function to let make main-req reappear when the user clicks on the clear button
-function reappear() {
-    mainReq.classList.remove('disappear');
-}
-// ..............................................
-// state tracker: set the initial state to false
-let isFormSubmitted = false;
+// function reappear() {
+//     mainReq.classList.remove('disappear');
+// }
+
+
 // creating a general function to make sure the user entered the required field 
 function data_valid(){
     // make sure the user actually entered data
@@ -152,27 +150,15 @@ function data_valid(){
         removeErrorClass(firstName, lastName, dateOb, Email);
         display(mainPost);
         disappear(mainReq);
+        reappear(subscribeBtn);
+        
+
         
     };
 };
 
 // .......................................................................................................
-// check if the user has submited before allowing suscribe button to function
 
-    // grab the suscribe button and the submit btn
-const subscribeBtn = document.getElementById('sub-btn')
-
-subscribeBtn.addEventListener('click', (e) => {
-    // check if the user has clicked the submit button
-    // validate your inputs here
-    if (data_valid()) {
-        isFormSubmitted = true 
-        window.location.href = 'contacts.html';       
-    } else {
-        isFormSubmitted = false
-        triggerAttention(submitBtn);
-    }
-});
 
 
 // ....................................................................................
@@ -187,7 +173,8 @@ function greetingIntro() {
 // ....................................................................................
 enterData(firstName, lastName, dateOb, Email);
 // .....................................................................
-
+const subscribeBtn = document.getElementById('sub-btn')
+disappear(subscribeBtn)
 // ....................................................................................
 // adding event listener to the submit button to perform specified functions
 // .................................................................................
@@ -207,6 +194,18 @@ submitBtn.addEventListener('click', (e) => {
 clearBtn.addEventListener('click', (e) => {
     e.preventDefault();
     clear();
-    reappear();
+    reappear(mainReq);
 });
+
+
+
+// check if the user has submited before allowing suscribe button to function
+
+
+subscribeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'contacts.html';       
+
+});
+
 

@@ -1,5 +1,14 @@
 
 /* lets design a 3d carousel for the user data that will be displayed */
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* margin: 2rem auto; */
+    justify-content: center;
+    /* align-items: center; */
+}
+
 
 .carousel-div {
     width: 100%;
@@ -8,21 +17,47 @@
     justify-content: center;
 }
 
-
+.action {
+    display: flex;
+    justify-content: center;
+}
 
 .card {
-    background-color: rgb(37, 105, 164);
-    width: 20%;
-    height: 20vh;
+    background-color: rgba(37, 105, 164, 0.5);
+    width: 20rem;
+    height: 50vh;
     border: 0.2rem solid rgba(32, 231, 61, 0.5);
     box-shadow: 0px 0px 10px rgba(255, 153, 122, 0.5);
     margin: 0.5rem;
 }
 
-.card.one {}
+/* .card.one {
+    position: relative;
+    top: 10px;
+    left: 100px;
+    z-index: -10;
+} */
 
-.card.two {}
+/* .card.two {
+    position: relative;
+    top: 10px;
+    /* left: 100px; 
+    z-index: -10;
+} */
 
-.card.three {}
+/* .card.three {
+    position: relative;
+    top: 10px;
+    right: 100px;
+    z-index: -10;
+}
 
-.card.four {}
+.card.four {
+    position: relative;
+    top: 10px;
+    /* left: 100px; 
+    z-index: -10;
+} */
+
+
+
