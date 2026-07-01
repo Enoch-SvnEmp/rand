@@ -2,8 +2,6 @@
 /* lets design a 3d carousel for the user data that will be displayed */
 .container {
     width: 100%;
-    display: flex;
-    flex-direction: column;
     /* margin: 2rem auto; */
     justify-content: center;
     /* align-items: center; */
@@ -11,10 +9,12 @@
 
 
 .carousel-div {
-    width: 100%;
+    width: 80%;
     display: flex;
-    margin: 2rem auto;
-    justify-content: center;
+    /* margin: 2rem auto; */
+    /* justify-content: center;
+    align-items: center;
+    background: linear-gradient(190deg, #010b37, #08090c); */
 }
 
 .action {
@@ -25,39 +25,15 @@
 .card {
     background-color: rgba(37, 105, 164, 0.5);
     width: 20rem;
-    height: 50vh;
+    height: 10rem;
     border: 0.2rem solid rgba(32, 231, 61, 0.5);
     box-shadow: 0px 0px 10px rgba(255, 153, 122, 0.5);
     margin: 0.5rem;
 }
 
-/* .card.one {
-    position: relative;
-    top: 10px;
-    left: 100px;
-    z-index: -10;
-} */
 
-/* .card.two {
-    position: relative;
-    top: 10px;
-    /* left: 100px; 
-    z-index: -10;
-} */
-
-/* .card.three {
-    position: relative;
-    top: 10px;
-    right: 100px;
-    z-index: -10;
+.left-arrow, .right-arrow {
+    padding: 0 1rem;
+    border: none;
+    border-radius: 0.6rem;
 }
-
-.card.four {
-    position: relative;
-    top: 10px;
-    /* left: 100px; 
-    z-index: -10;
-} */
-
-
-
